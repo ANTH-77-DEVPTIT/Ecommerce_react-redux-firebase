@@ -1,10 +1,11 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 const Homepage = () => {
   return (
-    <div>
-        <h1>Trang chủ của an</h1>
-    </div>
+    <Layout>
+        <h1>Layout</h1>
+    </Layout>
   )
 }
 
