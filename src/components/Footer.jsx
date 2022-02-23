@@ -1,11 +1,12 @@
 import React from 'react'
-import Layout from './Layout'
 
 const Footer = () => {
   return (
-    <Layout>
-        <h1>Footer</h1>
-    </Layout>
+    <div className="footer">
+        <p>trang web được thực hiện bởi</p>
+        <hr />
+        <p>Trương Hùng An</p>
+    </div>
   )
 }
 
