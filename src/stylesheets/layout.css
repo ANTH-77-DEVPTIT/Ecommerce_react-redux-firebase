@@ -63,8 +63,22 @@
     padding: 10px;
     background-color: #000088;
     color: white;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+button {
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    color: white;
+    background-color: #000088;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color:#550303;
+    transition: all 0.5s ease;
 }

@@ -1,0 +1,37 @@
+.product {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+}
+
+.product-img {
+  height: 200px;
+  width: auto;
+}
+
+
+.product-actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: #9898af;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.product:hover .product-actions {
+    opacity: 0.9;
+}
+
+.product-price {
+    color: white !important;
+    font-weight: bold;
+}
+
+.product_info-img {
+    height: 70vh;
+}

@@ -7,6 +7,7 @@ import Cartpage from './pages/Cartpage'
 import { Route, BrowserRouter, Routes } from "react-router-dom"
 
 import "./stylesheets/layout.css"
+import "./stylesheets/product.css"
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
           <Route path="/" exact element={<Homepage/>}/>
           <Route path="/login" exact element={<Loginpage />}/>
           <Route path="/register" exact element={<Registerpage/>}/>
-          <Route path="/productinfo" exact element={<Productpage/>} />
+          <Route path="/productinfo/:productid" exact element={<Productpage/>} />
           <Route path="/cart" exact element={<Cartpage />}/>
         </Routes>
       </BrowserRouter>
