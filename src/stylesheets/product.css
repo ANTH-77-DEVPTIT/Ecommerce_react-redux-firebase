@@ -35,3 +35,27 @@
 .product_info-img {
     height: 70vh;
 }
+
+.delete_cart {
+    color: rgb(252, 166, 180);
+    font-size: 18px;
+}
+.delete_cart:hover {
+    color: #000088;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.total_amount {
+    background-color: rgb(252, 166, 180);
+    padding: 5px 10px 5px 20px;
+    font-weight: bold;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.total_amount:hover {
+    background-color: #000088;
+    transition: all 0.35s ease;
+    color: white;
+}

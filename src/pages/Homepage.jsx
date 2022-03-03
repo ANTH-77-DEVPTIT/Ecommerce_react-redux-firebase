@@ -5,6 +5,7 @@ import fireDB from "../fireConfig";
 import { useEffect } from "react";
 // import { fireProducts } from "../fireCommerce";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const Homepage = () => {
   //lấy nhận xử lý dữ liệu ở đây
@@ -29,16 +30,25 @@ const Homepage = () => {
   //   });
   // };
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { cartItems } = useSelector((state) => state.cartReducer);
   useEffect(() => {
     getData();
   }, []);
   // add empty brackets here. and run only on the first render
   // console.log("data", products);
 
+  //sau khi dữ liệu được cập nhật lên state thì ta lấy về và lưu vào localStorage
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
   //function getData from firebase to store and save products
   async function getData() {
     try {
+      setLoading(true);
       const users = await getDocs(collection(fireDB, "products"));
       const productsArray = [];
       users.forEach((doc) => {
@@ -50,18 +60,20 @@ const Homepage = () => {
         productsArray.push(obj);
       });
       setProducts(productsArray);
+      setLoading(false);
     } catch (e) {
       console.error("Error adding document: ", e);
+      setLoading(false);
     }
   }
 
   const addToCart = (product) => {
-    console.log('Đã thêm vào giỏ hàng');
-    
-  }
+    //dispatch một action có type và payload được gửi đi
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
 
   return (
-    <Layout>
+    <Layout loading={loading}>
       <div className="container">
         <div className="row">
           {products.map((product) => {
@@ -82,7 +94,12 @@ const Homepage = () => {
                   <div className="product-actions">
                     <h3 className="product-price">{product.price} RS/-</h3>
                     <div className="d-flex">
-                      <button className="mx-2" onClick={() => addToCart(product)}>ADD TO CART</button>
+                      <button
+                        className="mx-2"
+                        onClick={() => addToCart(product)}
+                      >
+                        ADD TO CART
+                      </button>
                       <button
                         onClick={() => {
                           navigate(`/productinfo/${product.id}`);

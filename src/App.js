@@ -8,6 +8,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom"
 
 import "./stylesheets/layout.css"
 import "./stylesheets/product.css"
+import "./stylesheets/authentication.css"
 
 const App = () => {
   return (
