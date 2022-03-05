@@ -4,15 +4,15 @@
     position: relative;
 }
 
-.row {
+.register_content {
     height: 100vh;
     align-items: center;
     z-index: 999 !important;
 }
 .register_form {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
+    
     padding: 30px;
     margin: 40px;
 }
@@ -23,7 +23,7 @@
 
 .body_top {
     background-color: #000088;
-    height: 50%;
+    height: 50vh;
     position: absolute;
     top: 0;
     left: 0;

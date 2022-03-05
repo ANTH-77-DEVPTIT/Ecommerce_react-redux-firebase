@@ -9,8 +9,8 @@ const Registerpage = () => {
   return (
     <div className="register_parent">
       <div className="body_top"></div>
-      <div className="container">
-        <div className="row">
+      <div className="container register_content">
+        <div className="row ">
           <div className="col-md-5">
             <lottie-player
               src="https://assets10.lottiefiles.com/packages/lf20_yr6zz3wv.json"
@@ -21,8 +21,8 @@ const Registerpage = () => {
               className="lottie_player"
             ></lottie-player>
           </div>
-          <div className="col-md-7 z1">
-            <form className="register_form">
+          <div className="col-md-7">
+            <form className="register_form z1">
               <h2>Register</h2>
               <hr />
               <div className="mb-3">
