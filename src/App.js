@@ -6,6 +6,7 @@ import Productpage from './pages/Productpage'
 import Cartpage from './pages/Cartpage'
 import { Route, BrowserRouter, Routes } from "react-router-dom"
 
+import "./App.css"
 import "./stylesheets/layout.css"
 import "./stylesheets/product.css"
 import "./stylesheets/authentication.css"

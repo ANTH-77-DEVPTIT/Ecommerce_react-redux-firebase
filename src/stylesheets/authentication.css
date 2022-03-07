@@ -1,35 +1,57 @@
 .register_parent {
-    height: 100vh;
-    background-color: aliceblue;
-    position: relative;
+  height: 100vh;
+  background-color: aliceblue;
+  position: relative;
 }
 
 .register_content {
-    height: 100vh;
-    align-items: center;
-    z-index: 999 !important;
+  height: 100vh;
+  align-items: center;
+  margin: 0 15vw;
+  z-index: 999 !important;
 }
 .register_form {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    
-    padding: 30px;
-    margin: 40px;
+
+  padding: 30px;
+  margin: 40px;
+  background-color: white;
+  border-radius: 4px;
 }
 
 .form-control:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
-.body_top {
-    background-color: #000088;
-    height: 50vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 0 !important;
+/* .body_top {
+  background-color: #000088;
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+} */
+
+.login_parent {
+  height: 100vh;
+  background-color: aliceblue;
+  position: relative;
 }
-.z1 {
-    z-index: 1 !important;
+
+.login_content {
+  height: 100vh;
+  align-items: center;
+  margin: 0 15vw;
+  z-index: 999 !important;
+}
+.login_form {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+  padding: 30px;
+  margin: 40px;
+  background-color: white;
+  border-radius: 4px;
+  max-width: 600px;
 }
