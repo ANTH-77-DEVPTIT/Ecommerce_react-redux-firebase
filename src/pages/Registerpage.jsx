@@ -1,14 +1,44 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import Loading from "../components/Loading";
+import { toast } from "react-toastify";
 
 const Registerpage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
+  const [loader, setLoader] = useState(false);
+  const auth = getAuth();
+
+  const register = () => {
+    //người dùng thao tác với form đăng ký, validate xong thì
+    try {
+      setLoader(true);
+      createUserWithEmailAndPassword(auth, email, password);
+      setLoader(false);
+
+      toast.success("🦄 Wow so easy!");
+      //
+    } catch (error) {
+      console.log(error);
+      toast.error("Registration failed", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      setLoader(false);
+    }
+  };
 
   return (
     <div className="register_parent">
+      {loader && <Loading />}
       {/* <div className="body_top"></div> */}
       <div className="row register_content">
         <div className="col-md-5">
@@ -30,7 +60,8 @@ const Registerpage = () => {
                 Email address
               </label>
               <input
-                type="email"
+                type="text"
+                value={email}
                 className="form-control"
                 id="email"
                 placeholder="name@example.com"
@@ -46,6 +77,7 @@ const Registerpage = () => {
               </label>
               <input
                 type="password"
+                value={password}
                 className="form-control"
                 id="password"
                 placeholder="nhập mật khẩu tại đây"
@@ -61,6 +93,7 @@ const Registerpage = () => {
               </label>
               <input
                 type="password"
+                value={cPassword}
                 className="form-control"
                 id="cpassword"
                 placeholder="xác nhận mật khẩu tại đây"
@@ -71,10 +104,12 @@ const Registerpage = () => {
             </div>
 
             <div className="d-flex justify-content-left mt-3">
-              <button>REGISTER</button>
+              <button onClick={register}>REGISTER</button>
             </div>
             <hr />
-            <p>Already registered. Click <Link to="/login">here</Link> to Login</p>
+            <p>
+              Already registered. Click <Link to="/login">here</Link> to Login
+            </p>
           </form>
         </div>
       </div>

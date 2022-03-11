@@ -49,17 +49,18 @@ const Loginpage = () => {
               <button>Login</button>
             </div>
             <hr />
-            <p>Click <Link to ="/register">here</Link> to Register</p>
+            <p>
+              Click <Link to="/register">here</Link> to Register
+            </p>
           </form>
         </div>
         <div className="col-md-5">
           <lottie-player
-            src="https://assets10.lottiefiles.com/packages/lf20_yr6zz3wv.json"
-            background="#0000000"
+            src="https://assets5.lottiefiles.com/private_files/lf30_ssbiwdab.json"
+            background="transparent"
             speed="1"
             loop
             autoplay
-            className="lottie_player"
           ></lottie-player>
         </div>
       </div>
