@@ -11,24 +11,14 @@ import "./stylesheets/layout.css";
 import "./stylesheets/product.css";
 import "./stylesheets/authentication.css";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        />
-          
+        <ToastContainer />
+
         <Routes>
           <Route path="/" exact element={<Homepage />} />
           <Route path="/login" exact element={<Loginpage />} />

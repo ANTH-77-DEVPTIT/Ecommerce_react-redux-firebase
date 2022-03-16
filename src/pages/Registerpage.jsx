@@ -9,36 +9,33 @@ const Registerpage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
-  const [loader, setLoader] = useState(false);
+  const [loading, setLoading] = useState(false);
   const auth = getAuth();
 
-  const register = () => {
+  const register = async () => {
     //người dùng thao tác với form đăng ký, validate xong thì
     try {
-      setLoader(true);
-      createUserWithEmailAndPassword(auth, email, password);
-      setLoader(false);
+      setLoading(true);
+      const result = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(result);
 
+      setLoading(false);
       toast.success("🦄 Wow so easy!");
       //
     } catch (error) {
       console.log(error);
-      toast.error("Registration failed", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-      setLoader(false);
+      toast.error("Registration failed");
+      setLoading(false);
     }
   };
 
   return (
     <div className="register_parent">
-      {loader && <Loading />}
+      {loading && <Loading />}
       {/* <div className="body_top"></div> */}
       <div className="row register_content">
         <div className="col-md-5">

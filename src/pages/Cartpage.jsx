@@ -45,9 +45,9 @@ const Cartpage = () => {
                 cartItems.map((item) => {
                   return (
                     //một lần chạy là một dòng
-                    <tr>
+                    <tr key={item.id}>
                       <th>
-                        <img src={item.imageURL} height="80" width="auto" />
+                        <img src={item.imageURL} alt="" height="80" width="auto" />
                       </th>
                       <th>{item.name}</th>
                       <th>{item.price}</th>
